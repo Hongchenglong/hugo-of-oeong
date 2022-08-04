@@ -31,12 +31,14 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 editPost:
-    URL: "https://github.com/Hongchenglong/hugo-of-oeong/content"
+    URL: "https://github.com/Hongchenglong/hugo-of-oeong/blob/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
 
-`git commit -m "<message>"`是git提交代码的命令，我们需要写commit message才能提交代码。通常，commit message应该清晰明了，说明本次提交的目的，具体做了什么操作，方便之后重新定位先前版本的代码。但是日常工作中，开发人员往往比较随意，commit message没有规范，日后维护比较困难。
+`git commit -m "<message>"`是git提交代码的命令，我们需要填写commit message才能提交代码。通常，commit message应该清晰明了，说明本次提交的目的，具体做了什么操作，方便之后定位先前版本的代码。但是日常工作中，开发人员往往比较随意，commit message没有规范，日后维护比较困难。
+
+<!--more-->
 
 所以在今后的工作中，我们可以参考[Git Commit Template](https://plugins.jetbrains.com/plugin/9861-git-commit-template)的commit message格式：
 `<type>(<scope>): <subject>`
