@@ -1,0 +1,72 @@
+---
+title: "commit message格式"
+date: 2022-08-04T14:20:42+08:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["git"]
+author: "oeong"
+# author: ["Me", "You"] # multiple authors
+draft: false
+description: "<type>(<scope>): <subject>"
+showToc: true
+TocOpen: false
+hidemeta: false
+comments: false
+canonicalURL: "https://canonical.url/to/page"
+disableHLJS: true # to disable highlightjs
+disableShare: false
+disableHLJS: false
+hideSummary: false
+searchHidden: false
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
+cover:
+    image: "<image path/url>" # image path/url
+    alt: "<alt text>" # alt text
+    caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
+editPost:
+    URL: "https://github.com/Hongchenglong/hugo-of-oeong/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+---
+
+`git commit -m "<message>"`是提交代码的命令，我们需要写commit message才能提交代码。通常，commit message应该清晰明了，说明本次提交的目的，具体做了什么操作，方便之后重新定位先前版本的代码。但是日常工作中，开发人员往往比较随意，commit message没有规范。
+
+所以在日后的工作中，我们可以参考[Git Commit Template](https://plugins.jetbrains.com/plugin/9861-git-commit-template)的commit message格式：
+`<type>(<scope>): <subject>`
+
+## type（必须）
+用于说明git commit的类别，只允许使用下面的标识。
+
+- feat：新功能（feature）
+- fix：修复bug
+- docs：文档（documentation）
+- style：格式，不影响代码运行的变动，空格、注释
+- refactor：重构，即不是新增功能，也不是修改bug的代码变动
+- perf：优化相关，比如提升性能、体验
+- test：增加测试
+- chore：构建过程或辅助工具的变动
+- revert：回滚到之前的版本
+
+## scope（可选）
+
+scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等。
+
+## subject（必须）
+
+subject是commit目的的简短描述，不超过50个字符。结尾不加句号或其他标点符号。
+
+最后，根据以上规范，commit message将是如下的格式：
+```
+feat(Controller): 用户查询接口开发
+```
+
+## 参考
+
+- IDEA插件：[Git Commit Template](https://plugins.jetbrains.com/plugin/9861-git-commit-template)
