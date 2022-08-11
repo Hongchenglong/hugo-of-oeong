@@ -3,7 +3,6 @@ title: "Weakness"
 date: 2022-08-03T23:38:47+08:00
 tags: ["default"]
 author: "oeong"
-draft: true
 hidden: true
 ---
 
