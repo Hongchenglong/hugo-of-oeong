@@ -1,39 +1,10 @@
 ---
 title: "commit message格式"
 date: 2022-08-04T14:20:42+08:00
-# weight: 1
-# aliases: ["/first"]
 tags: ["git"]
 author: "oeong"
-# author: ["Me", "You"] # multiple authors
 draft: false
 description: "<type>(<scope>): <subject>"
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-UseHugoToc: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/Hongchenglong/hugo-of-oeong/blob/main/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
 ---
 
 `git commit -m "<message>"`是git提交代码的命令，我们需要填写commit message才能提交代码。通常，commit message应该清晰明了，说明本次提交的目的，具体做了什么操作，方便之后定位先前版本的代码。但是日常工作中，开发人员往往比较随意，commit message没有规范，日后维护比较困难。
