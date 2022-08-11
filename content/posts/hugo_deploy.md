@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "Hugo_depoly"
+date: 2022-08-04T20:51:12+08:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["default"]
@@ -35,3 +35,22 @@ editPost:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
+
+
+
+run.sh
+
+```sh
+cd hugo-of-oeong
+git pull
+hugo --theme=PaperMod --baseUrl="" --buildDrafts
+```
+
+定时任务
+
+```sh
+crontab -e
+# 写入任务，每小时执行一次
+0 */1 * * * /bin/bash /www/wwwroot/hugo/run.sh
+```
+
