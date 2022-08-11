@@ -1,4 +1,4 @@
-baseURL: ""
+baseURL: "/"
 title: hugo of oeong
 paginate: 5
 theme: PaperMod
@@ -8,19 +8,17 @@ minify:
   minifyOutput: true
 
 params:
+  author: oeong
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: ExampleSite
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: oeong
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
     favicon: /assets/img/Neutral_Face_Emoji_grande.png
     favicon16x16: /assets/img/Neutral_Face_Emoji_grande.png
     favicon32x32: /assets/img/Neutral_Face_Emoji_grande.png
@@ -61,7 +59,7 @@ params:
       url: "https://github.com/hongchenglong"
 
   editPost:
-    URL: "https://github.com/Hongchenglong/hugo-of-oeong/content"
+    URL: "https://github.com/Hongchenglong/hugo-of-oeong/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
     
