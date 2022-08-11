@@ -1,4 +1,4 @@
-baseURL: "/"
+baseURL: "http://hugo.oeong.com/"
 title: hugo of oeong
 paginate: 5
 theme: PaperMod
