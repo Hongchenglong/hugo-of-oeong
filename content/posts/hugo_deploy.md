@@ -3,11 +3,12 @@ title: "Hugo_depoly"
 date: 2022-08-04T20:51:12+08:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["default"]
+tags: ["linux", "hugo"]
 author: "oeong"
 # author: ["Me", "You"] # multiple authors
 draft: true
-description: "Desc Text."
+hidden: true
+description: "Hugo - The world’s fastest framework for building websites"
 showToc: true
 TocOpen: false
 hidemeta: false
@@ -36,21 +37,52 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
+The world’s fastest framework for building websites
+
+<!--more-->
+
+hugo: https://github.com/gohugoio/hugo
+
+hugo模板：https://github.com/adityatelange/hugo-PaperMod
+
+## 本地
 
 
-run.sh
+配置config.yml
+
+```
+params:
+  label:
+    text: "Home"
+    icon: /assets/img/Neutral_Face_Emoji_grande.png
+    iconHeight: 35
+```
+
+## 服务器
+
+写运行脚本
+```bash
+vim run.sh
+```
 
 ```sh
-cd hugo-of-oeong
+hugo=/www/wwwroot/hugo
+cd ${hugo}/hugo-of-oeong
 git pull
+# 构建项目，生成public
 hugo --theme=PaperMod --baseUrl="" --buildDrafts
+```
+
+部署在Nginx上，将img复制到public/assets/ 
+```bash
+cp -r ${hugo}/hugo-of-oeong/assets/img/ ${hugo}/hugo-of-oeong/public/assets/ 
 ```
 
 定时任务
 
 ```sh
 crontab -e
-# 写入任务，每小时执行一次
+# 写入定时任务，每小时执行一次
 0 */1 * * * /bin/bash /www/wwwroot/hugo/run.sh
 ```
 
