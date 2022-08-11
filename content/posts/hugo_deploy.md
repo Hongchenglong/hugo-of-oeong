@@ -1,49 +1,17 @@
 ---
-title: "Hugo_depoly"
+title: "hugo部署记录"
 date: 2022-08-04T20:51:12+08:00
-# weight: 1
-# aliases: ["/first"]
-tags: ["linux", "hugo"]
+tags: ["hugo", "linux"]
 author: "oeong"
-# author: ["Me", "You"] # multiple authors
-draft: true
-hidden: true
-description: "Hugo - The world’s fastest framework for building websites"
-showToc: true
-TocOpen: false
-hidemeta: false
-comments: false
-UseHugoToc: true
-canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
-disableShare: false
-disableHLJS: false
-hideSummary: false
-searchHidden: false
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-ShowWordCount: true
-ShowRssButtonInSectionTermList: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
-editPost:
-    URL: "https://github.com/Hongchenglong/hugo-of-oeong/blob/main/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+draft: false
+description: "Hugo is the world’s fastest framework for building websites."
 ---
 
-The world’s fastest framework for building websites
+[Hugo](https://github.com/gohugoio/hugo) is the world’s fastest framework for building websites.
 
 <!--more-->
 
-hugo: https://github.com/gohugoio/hugo
-
-hugo模板：https://github.com/adityatelange/hugo-PaperMod
+简单记录部署hugo的过程
 
 ## 本地
 
@@ -58,7 +26,22 @@ params:
     iconHeight: 35
 ```
 
+常用命令
+
+```bash
+# 启动hugo
+hugo server -D
+# 以post模板生成文章
+hugo new --kind post posts/hugo_depoly.md
+```
+
 ## 服务器
+
+克隆仓库
+
+```
+git clone https://github.com/Hongchenglong/hugo-of-oeong.git
+```
 
 写运行脚本
 ```bash
@@ -68,12 +51,28 @@ vim run.sh
 ```sh
 hugo=/www/wwwroot/hugo
 cd ${hugo}/hugo-of-oeong
+# 拉取远程仓库的代码
 git pull
 # 构建项目，生成public
 hugo --theme=PaperMod --baseUrl="" --buildDrafts
 ```
 
-部署在Nginx上，将img复制到public/assets/ 
+配置nginx.conf
+
+```conf
+server
+{
+    listen 80;
+    server_name hugo.oeong.com;
+    index index.php index.html index.htm default.php default.htm default.html;
+    root /www/wwwroot/hugo/hugo-of-oeong/public;
+    
+    ...
+}
+```
+
+将img复制到public/assets/ 
+
 ```bash
 cp -r ${hugo}/hugo-of-oeong/assets/img/ ${hugo}/hugo-of-oeong/public/assets/ 
 ```
@@ -82,7 +81,11 @@ cp -r ${hugo}/hugo-of-oeong/assets/img/ ${hugo}/hugo-of-oeong/public/assets/
 
 ```sh
 crontab -e
-# 写入定时任务，每小时执行一次
+# 设置定时任务，每小时执行一次
 0 */1 * * * /bin/bash /www/wwwroot/hugo/run.sh
 ```
+
+## 参考
+
+- [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) 
 
