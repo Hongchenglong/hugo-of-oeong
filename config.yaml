@@ -53,7 +53,7 @@ params:
 
   label:
     text: "Home"
-    icon: /apple-touch-icon.png
+    icon: /assets/img/Neutral_Face_Emoji_grande.png
     iconHeight: 35
 
   # profile-mode
