@@ -29,11 +29,11 @@ languages:
                 - name: Archive
                   url: archives
                   weight: 5
-                - name: Search
-                  url: search/
-                  weight: 10
                 - name: Tags
                   url: tags/
+                  weight: 10
+                - name: Search
+                  url: search/
                   weight: 10
 
 outputs:
@@ -58,7 +58,7 @@ params:
     ShowRssButtonInSectionTermList: true
     ShowToc: true
     # comments: false
-    images: ["papermod-cover.png"]
+    images: ["/static/Neutral_Face_Emoji_grande.png"]
 
     profileMode:
         enabled: false
@@ -95,9 +95,9 @@ params:
 
     assets:
         disableHLJS: true
-    #     favicon: "<link / abs url>"
-    #     favicon16x16: "<link / abs url>"
-    #     favicon32x32: "<link / abs url>"
+        favicon: /static/Neutral_Face_Emoji_grande.png
+        favicon16x16: /static/Neutral_Face_Emoji_grande.png
+        favicon32x32: /static/Neutral_Face_Emoji_grande.png
     #     apple_touch_icon: "<link / abs url>"
     #     safari_pinned_tab: "<link / abs url>"
 
