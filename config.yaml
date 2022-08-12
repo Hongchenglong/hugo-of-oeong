@@ -29,7 +29,7 @@ languages:
                 - name: Archive
                   url: archives
                   weight: 5
-                - name: Tags
+                - name: Tag
                   url: tags/
                   weight: 10
                 - name: Search
@@ -45,7 +45,7 @@ outputs:
 params:
     label:
         text: "oeong.com"
-        icon: /assets/img/Neutral_Face_Emoji_grande.png
+        icon: Neutral_Face_Emoji_grande.png
         iconHeight: 35
 
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -63,7 +63,7 @@ params:
     ShowRssButtonInSectionTermList: true
     ShowToc: true
     # comments: false
-    images: ["/assets/img/Neutral_Face_Emoji_grande.png"]
+    images: ["Neutral_Face_Emoji_grande.png"]
 
     profileMode:
         enabled: false
@@ -100,9 +100,9 @@ params:
 
     assets:
         disableHLJS: true
-        favicon: /assets/img/Neutral_Face_Emoji_grande.png
-        favicon16x16: /assets/img/Neutral_Face_Emoji_grande.png
-        favicon32x32: /assets/img/Neutral_Face_Emoji_grande.png
+        favicon: Neutral_Face_Emoji_grande.png
+        favicon16x16: Neutral_Face_Emoji_grande.png
+        favicon32x32: Neutral_Face_Emoji_grande.png
     #     apple_touch_icon: "<link / abs url>"
     #     safari_pinned_tab: "<link / abs url>"
 

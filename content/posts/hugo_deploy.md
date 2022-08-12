@@ -43,6 +43,7 @@ hugo new --kind post posts/hugo_depoly.md
 
 ```
 git clone https://github.com/Hongchenglong/hugo-of-oeong.git
+git remote add gitee https://gitee.com/oeong/hugo-of-oeong.git
 ```
 
 写运行脚本
@@ -54,9 +55,9 @@ vim run.sh
 hugo=/www/wwwroot/hugo
 cd ${hugo}/hugo-of-oeong
 # 拉取远程仓库的代码
-git pull
+git pull gitee main
 # 构建项目，生成public
-hugo --buildDrafts
+hugo serve
 ```
 
 如果是从其他地方copy过来的站点，有可能遇到下面的问题，这个时候需要重新git clone一下主题
