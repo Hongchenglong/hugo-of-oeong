@@ -11,14 +11,16 @@ description: "Hugo is the world’s fastest framework for building websites."
 
 <!--more-->
 
-简单记录部署hugo的过程
+最近从hexo换到hugo框架，hugo是一个用go语言编写的静态网站生成器，号称世界上最快的构建网站工具。在此，简单记录本地hugo部署到服务器的过程。
 
 ## 本地
 
 
 配置config.yml
 
-```
+```yml
+baseURL: "https://oeong.com/"
+
 params:
   label:
     text: "Home"
@@ -54,7 +56,13 @@ cd ${hugo}/hugo-of-oeong
 # 拉取远程仓库的代码
 git pull
 # 构建项目，生成public
-hugo --theme=PaperMod --baseUrl="" --buildDrafts
+hugo --buildDrafts
+```
+
+如果是从其他地方copy过来的站点，有可能遇到下面的问题，这个时候需要重新git clone一下主题
+
+```sh
+WARN 2021/02/03 10:56:17 found no layout file for "HTML" for kind "home": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
 ```
 
 配置nginx.conf
@@ -63,11 +71,10 @@ hugo --theme=PaperMod --baseUrl="" --buildDrafts
 server
 {
     listen 80;
-    server_name hugo.oeong.com;
+    server_name oeong.com;
     index index.php index.html index.htm default.php default.htm default.html;
+    # 网站根路径是打包后的public
     root /www/wwwroot/hugo/hugo-of-oeong/public;
-    
-    ...
 }
 ```
 
@@ -77,7 +84,7 @@ server
 cp -r ${hugo}/hugo-of-oeong/assets/img/ ${hugo}/hugo-of-oeong/public/assets/ 
 ```
 
-定时任务
+定时任务执行`run.sh` ，自动拉取新代码，构建项目
 
 ```sh
 crontab -e
@@ -88,4 +95,5 @@ crontab -e
 ## 参考
 
 - [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) 
-
+- [Hugo 部署到自己服务器](https://www.jianshu.com/p/62e51e8d2d84)
+- [浅谈我为什么从 HEXO 迁移到 HUGO](https://sspai.com/post/59904)
