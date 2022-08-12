@@ -34,7 +34,7 @@ languages:
                   weight: 10
                 - name: Search
                   url: search/
-                  weight: 10
+                  weight: 15
 
 outputs:
     home:
@@ -43,6 +43,11 @@ outputs:
         - JSON
 
 params:
+    label:
+        text: "oeong.com"
+        icon: /assets/img/Neutral_Face_Emoji_grande.png
+        iconHeight: 35
+
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "..."
     author: Theme PaperMod
