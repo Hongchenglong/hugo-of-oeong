@@ -11,7 +11,7 @@ description: "Hugo is the world’s fastest framework for building websites."
 
 <!--more-->
 
-最近从hexo换到hugo框架，hugo是一个用go语言编写的静态网站生成器，号称世界上最快的构建网站工具。在此，简单记录本地hugo部署到服务器的过程。
+最近从hexo换到hugo框架，hugo是一个用go语言编写的静态网站生成器，号称世界上最快的构建网站工具。在此，简单记录本地搭建hugo，部署到服务器的过程。
 
 ## 本地
 

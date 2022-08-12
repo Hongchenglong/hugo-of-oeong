@@ -58,7 +58,7 @@ params:
     ShowRssButtonInSectionTermList: true
     ShowToc: true
     # comments: false
-    images: ["/static/Neutral_Face_Emoji_grande.png"]
+    images: ["/assert/img/Neutral_Face_Emoji_grande.png"]
 
     profileMode:
         enabled: false
@@ -95,9 +95,9 @@ params:
 
     assets:
         disableHLJS: true
-        favicon: /static/Neutral_Face_Emoji_grande.png
-        favicon16x16: /static/Neutral_Face_Emoji_grande.png
-        favicon32x32: /static/Neutral_Face_Emoji_grande.png
+        favicon: /assert/img/Neutral_Face_Emoji_grande.png
+        favicon16x16: /assert/img/Neutral_Face_Emoji_grande.png
+        favicon32x32: /assert/img/Neutral_Face_Emoji_grande.png
     #     apple_touch_icon: "<link / abs url>"
     #     safari_pinned_tab: "<link / abs url>"
 
