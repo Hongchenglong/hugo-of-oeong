@@ -1,5 +1,4 @@
 ---
-title: "Search"
+title: "search"
 layout: "search"
-url: "/search"
 ---

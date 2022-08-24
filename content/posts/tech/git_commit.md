@@ -1,8 +1,12 @@
 ---
 title: "commit message格式"
 date: 2022-08-04T14:20:42+08:00
-tags: ["git"]
 author: "oeong"
+categories: 
+- 
+tags: 
+- tech
+- git
 draft: false
 description: "<type>(<scope>): <subject>"
 ---

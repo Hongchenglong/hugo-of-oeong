@@ -1,8 +1,13 @@
 ---
 title: "hugo部署记录"
 date: 2022-08-04T20:51:12+08:00
-tags: ["hugo", "linux"]
 author: "oeong"
+categories: 
+- 
+tags: 
+- tech
+- hugo
+- linux
 draft: false
 description: "Hugo is the world’s fastest framework for building websites."
 ---

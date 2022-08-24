@@ -1,16 +1,16 @@
 baseURL: "https://oeong.com/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: oeong.com
-paginate: 5
+title: 匡山读书处
+paginate: 5 # 首页每页显示的文章数
 theme: hugo-PaperMod
 
 enableInlineShortcodes: true
-enableRobotsTXT: true
+enableEmoji: true # 允许使用 Emoji 表情，建议 true
+enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
+hasCJKLanguage: true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
 buildDrafts: false
 buildFuture: false
 buildExpired: false
-enableEmoji: true
-pygmentsUseClasses: true
-# googleAnalytics: UA-123-45
+googleAnalytics:  # 谷歌统计
 
 minify:
     disableXML: true
@@ -21,19 +21,31 @@ languages:
         languageName: "English"
         weight: 1
         taxonomies:
-          category: categories
-          tag: tags
-          series: series
+            category: categories
+            tag: tags
+            series: series
+        profileMode:
+            enabled: true
+            buttons:
+                - name: 👨🏻‍💻 技术
+                  url: posts/tech
+                - name: 📕 阅读
+                  url: posts/read
+                - name: 🏖 生活
+                  url: posts/life
         menu:
             main:
-                - name: Archive
-                  url: archives
+                - name: search
+                  url: search
+                  weight: 1
+                - name: posts
+                  url: posts
                   weight: 5
-                - name: Tag
-                  url: tags/
-                  weight: 10
-                - name: Search
-                  url: search/
+                - name: archives
+                  url: archives
+                  weight: 10                
+                - name: tags
+                  url: tags
                   weight: 15
 
 outputs:
@@ -44,39 +56,31 @@ outputs:
 
 params:
     label:
-        text: "oeong.com"
-        icon: Neutral_Face_Emoji_grande.png
+        text: "oeong"
+        icon: NeutralFace.png
         iconHeight: 35
-
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "..."
-    author: Theme PaperMod
-    defaultTheme: auto
-    # disableThemeToggle: true
+    # description: "..."
+    author: oeong
+    defaultTheme: auto  # defaultTheme: light or  dark 
+    disableThemeToggle: false
+    DateFormat: "2006-01-02"
     ShowShareButtons: true
     ShowReadingTime: true
-    # disableSpecial1stPost: true
+    # disableSpecialistPost: true
     displayFullLangName: true
     ShowPostNavLinks: true
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
-    ShowRssButtonInSectionTermList: true
-    ShowToc: true
-    # comments: false
-    images: ["Neutral_Face_Emoji_grande.png"]
-
-    profileMode:
-        enabled: false
-        title: PaperMod
-        imageUrl: "#"
-        imageTitle: my image
-        # imageWidth: 120
-        # imageHeight: 120
-        buttons:
-            - name: Archives
-              url: archives
-            - name: Tags
-              url: tags
+    hideFooter: false # 隐藏页脚
+    ShowWordCounts: true
+    VisitCount: true
+    Reward: true #打赏
+    ShowLastMod: true #显示文章更新时间
+    ShowToc: true # 显示目录
+    TocOpen: true # 自动展开目录
+    comments: true
+    # images: ["NeutralFace.png"]
 
     homeInfoParams:
         Title: "Hi there."
@@ -86,12 +90,25 @@ params:
     socialIcons:
         - name: twitter
           url: "https://twitter.com/oeongx"
-        - name: stackoverflow
-          url: "https://stackoverflow.com"
+        # - name: stackoverflow
+        #   url: "https://stackoverflow.com"
         - name: github
           url: "https://github.com/hongchenglong"
         - name: Rss
           url: "index.xml"
+
+    # profileMode:
+    #     enabled: false
+    #     title: PaperMod
+    #     imageUrl: "#"
+    #     imageTitle: my image
+    #     # imageWidth: 120
+    #     # imageHeight: 120
+    #     buttons:
+    #         - name: Archives
+    #           url: archives
+    #         - name: Tags
+    #           url: tags
 
     editPost:
         URL: "https://github.com/Hongchenglong/hugo-of-oeong/tree/main/content"
@@ -100,49 +117,60 @@ params:
 
     assets:
         disableHLJS: true
-        favicon: Neutral_Face_Emoji_grande.png
-        favicon16x16: Neutral_Face_Emoji_grande.png
-        favicon32x32: Neutral_Face_Emoji_grande.png
-    #     apple_touch_icon: "<link / abs url>"
-    #     safari_pinned_tab: "<link / abs url>"
+        favicon: "NeutralFace.png"
+        favicon16x16: "NeutralFace.png"
+        favicon32x32: "NeutralFace.png"
+        apple_touch_icon: "NeutralFace.png"
+        safari_pinned_tab: "NeutralFace.png"
 
-    # cover:
-    #     hidden: true # hide everywhere but not in structured data
-    #     hiddenInList: true # hide on list pages and home
-    #     hiddenInSingle: true # hide on single page
+    cover:
+        hidden: false # hide everywhere but not in structured data
+        hiddenInList: false # hide on list pages and home
+        hiddenInSingle: false # hide on single page
 
-    # fuseOpts:
-    #     isCaseSensitive: false
-    #     shouldSort: true
-    #     location: 0
-    #     distance: 1000
-    #     threshold: 0.4
-    #     minMatchCharLength: 0
-    #     keys: ["title", "permalink", "summary", "content"]
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary"]
 
 markup:
     goldmark:
         renderer:
-            unsafe: true
+            unsafe: true # HUGO 默认转义 Markdown 文件中的 HTML 代码，如需开启的话
     highlight:
-        noClasses: false
         # anchorLineNos: true
-        # codeFences: true
-        # guessSyntax: true
+        codeFences: true  
+        guessSyntax: true
         # lineNos: true
-        # style: monokai
+        noClasses: true
+        tabWidth: 4
+        style: monokai
+        # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。
+        # guessSyntax：猜测语法，这个功能建议设置为 true, 如果你没有设置要显示的语言则会自动匹配。
+        # hl_Lines：高亮的行号，一般这个不设置，因为每个代码块我们可能希望让高亮的地方不一样。
+        # lineNoStart：行号从编号几开始，一般从 1 开始。
+        # lineNos：是否显示行号，我比较喜欢显示，所以我设置的为 true.
+        # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
+        # noClasses：使用 class 标签，而不是内嵌的内联样式
 
 privacy:
     vimeo:
         disabled: false
         simple: true
+
     twitter:
         disabled: false
         enableDNT: true
         simple: true
+
     instagram:
         disabled: false
         simple: true
+
     youtube:
         disabled: false
         privacyEnhanced: true

@@ -3,8 +3,7 @@ title: "Weakness"
 date: 2022-08-03T23:38:47+08:00
 tags: ["default"]
 author: "oeong"
-hidden: true
-draft: true
+draft: true # 是否为草稿
 ---
 
 刚开始以为研究的是技术，后来发现研究的是金融；
