@@ -1,5 +1,5 @@
 ---
-title: "hugo部署记录"
+title: "Hugo部署记录"
 date: 2022-08-04T20:51:12+08:00
 author: "oeong"
 categories: 
@@ -51,18 +51,15 @@ git clone https://github.com/Hongchenglong/hugo-of-oeong.git
 git remote add gitee https://gitee.com/oeong/hugo-of-oeong.git
 ```
 
-写运行脚本
-```bash
-vim run.sh
-```
+写运行脚本`vim run.sh`
 
 ```sh
 hugo=/www/wwwroot/hugo
 cd ${hugo}/hugo-of-oeong
 # 拉取远程仓库的代码
 git pull gitee main
-# 构建项目，生成public
-hugo serve
+# 构建项目，生成public，外面的文件会默认替换主题的文件
+hugo
 ```
 
 如果是从其他地方copy过来的站点，有可能遇到下面的问题，这个时候需要重新git clone一下主题
@@ -71,7 +68,7 @@ hugo serve
 WARN 2021/02/03 10:56:17 found no layout file for "HTML" for kind "home": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
 ```
 
-配置nginx.conf
+配置`nginx.conf`
 
 ```conf
 server
@@ -82,12 +79,6 @@ server
     # 网站根路径是打包后的public
     root /www/wwwroot/hugo/hugo-of-oeong/public;
 }
-```
-
-将img复制到public/assets/ 
-
-```bash
-cp -r ${hugo}/hugo-of-oeong/assets/img/ ${hugo}/hugo-of-oeong/public/assets/ 
 ```
 
 定时任务执行`run.sh` ，自动拉取新代码，构建项目
@@ -101,5 +92,6 @@ crontab -e
 ## 参考
 
 - [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) 
+- [sulv-hugo-papermod](https://github.com/xyming108/sulv-hugo-papermod)
 - [Hugo 部署到自己服务器](https://www.jianshu.com/p/62e51e8d2d84)
 - [浅谈我为什么从 HEXO 迁移到 HUGO](https://sspai.com/post/59904)

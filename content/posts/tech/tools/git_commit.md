@@ -1,5 +1,5 @@
 ---
-title: "commit message格式"
+title: "git commit格式"
 date: 2022-08-04T14:20:42+08:00
 author: "oeong"
 categories: 
