@@ -1,5 +1,5 @@
 ---
-title: "Linux"
+title: "Linux笔记"
 date: 2020-02-26 18:08:33
 draft: false
 author: ["oeong"]

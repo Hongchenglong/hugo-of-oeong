@@ -1,5 +1,5 @@
 ---
-title: "conda"
+title: "conda入门"
 date: 2021-12-10 00:12:15
 draft: false
 author: ["oeong"]

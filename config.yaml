@@ -1,8 +1,8 @@
-baseURL: "https://oeong.com/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://oeong.com/"
+languageCode: zh-cn # en-us
 title: 匡山读书处
-paginate: 5 # 首页每页显示的文章数
 theme: hugo-PaperMod
-
+paginate: 5 # 首页每页显示的文章数
 enableInlineShortcodes: true
 enableEmoji: true # 允许使用 Emoji 表情，建议 true
 enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
@@ -14,7 +14,6 @@ googleAnalytics:  # 谷歌统计
 
 minify:
     disableXML: true
-    # minifyOutput: true
 
 languages:
     en:
@@ -97,19 +96,6 @@ params:
         - name: Rss
           url: "index.xml"
 
-    # profileMode:
-    #     enabled: false
-    #     title: PaperMod
-    #     imageUrl: "#"
-    #     imageTitle: my image
-    #     # imageWidth: 120
-    #     # imageHeight: 120
-    #     buttons:
-    #         - name: Archives
-    #           url: archives
-    #         - name: Tags
-    #           url: tags
-
     editPost:
         URL: "https://github.com/Hongchenglong/hugo-of-oeong/tree/main/content"
         Text: "Suggest Changes" # edit text
@@ -149,13 +135,6 @@ markup:
         noClasses: true
         tabWidth: 4
         style: monokai
-        # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。
-        # guessSyntax：猜测语法，这个功能建议设置为 true, 如果你没有设置要显示的语言则会自动匹配。
-        # hl_Lines：高亮的行号，一般这个不设置，因为每个代码块我们可能希望让高亮的地方不一样。
-        # lineNoStart：行号从编号几开始，一般从 1 开始。
-        # lineNos：是否显示行号，我比较喜欢显示，所以我设置的为 true.
-        # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
-        # noClasses：使用 class 标签，而不是内嵌的内联样式
 
 privacy:
     vimeo:

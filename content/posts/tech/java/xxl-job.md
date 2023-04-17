@@ -1,5 +1,5 @@
 ---
-title: "XXL-JOB"
+title: "XXL-JOB入门"
 date: 2022-05-01 11:37:36
 draft: false
 author: ["oeong"]

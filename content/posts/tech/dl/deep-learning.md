@@ -1,5 +1,5 @@
 ---
-title: "深度学习"
+title: "深度学习入门"
 date: 2021-12-12
 draft: false
 author: ["oeong"]
